@@ -1,0 +1,37 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "599957",
+      "name": "我的",
+      "font_class": "wode",
+      "unicode": "e66e",
+      "unicode_decimal": 58990
+    },
+    {
+      "icon_id": "797335",
+      "name": "精选",
+      "font_class": "jingxuan",
+      "unicode": "e62b",
+      "unicode_decimal": 58923
+    },
+    {
+      "icon_id": "5877067",
+      "name": "书架",
+      "font_class": "biaoqing",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "7155218",
+      "name": "菜单",
+      "font_class": "caidan",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    }
+  ]
+}
