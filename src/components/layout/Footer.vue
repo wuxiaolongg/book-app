@@ -2,20 +2,28 @@
   <div class="foot">
     <ul class="foot_ul">
       <li>
-        <img src="../../assets/image/icon_书架.png" alt class="foot_img" />
-        <a href>书架</a>
+        <router-link :to="{name:'Content'}" class="menu">
+          <i class="iconfont icon-biaoqing" />
+          <span href>书架</span>
+        </router-link>
       </li>
       <li>
-        <img src="../../assets/image/精选.png" alt class="foot_img" />
-        <a href>精选</a>
+        <router-link :to="{name:'handpick'}" class="menu">
+          <i class="iconfont icon-jingxuan" />
+          <span href>精选</span>
+        </router-link>
       </li>
       <li>
-        <img src="../../assets/image/菜单.png" alt class="foot_img" />
-        <a href>书库</a>
+        <router-link :to="{name:'classify'}" class="menu">
+          <i class="iconfont icon-caidan" />
+          <span href>书库</span>
+        </router-link>
       </li>
       <li>
-        <img src="../../assets/image/我的.png" alt class="foot_img" />
-        <a href>我的</a>
+        <router-link :to="{name:'home'}" class="menu">
+          <i class="iconfont icon-wode" />
+          <span href>我的</span>
+        </router-link>
       </li>
     </ul>
   </div>
@@ -25,6 +33,9 @@ export default {};
 </script>
 <style scoped>
 .foot {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
   height: 69px;
   background: #fff;
   box-shadow: 0 0 20px #ccc;
@@ -35,6 +46,7 @@ export default {};
   justify-content: space-around;
 }
 .foot_ul li {
+  cursor: pointer;
   font-size: 16px;
   display: flex;
   flex: 1;
@@ -46,7 +58,15 @@ export default {};
   font-size: 16px;
   width: 26px;
 }
-.foot_ul li a {
+.menu i {
+  font-size: 28px;
+}
+.foot_ul li span {
   display: flex;
+  font-size: 16px;
+}
+
+.foot_ul li:hover .menu {
+  color: aqua;
 }
 </style>

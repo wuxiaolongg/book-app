@@ -1,28 +1,40 @@
 <template>
-  <div class="header">
-    <Head></Head>
-  </div>
+  <transition name="scroll_bar_transition">
+    <div class="head_div" v-show="show_index_scroll_bar">
+      <h2>书架</h2>
+      <div class="head_img">
+        <img src="../../assets/image/搜索.png" alt class="search" />
+      </div>
+    </div>
+  </transition>
 </template>
 <script>
 import { mapState, mapActions } from "vuex";
-import Head from "./head";
 export default {
   data() {
     return {};
   },
-  components: {
-    Head
+  methods: {
+    ...mapActions({
+      moniting_scrollbar: "scrollBar/update_scroll_value"
+    })
+  },
+  computed: {
+    ...mapState({
+      scrolled: state => state.scrollBar.current_scrolled_value > 70,
+      show_index_scroll_bar: state => state.scrollBar.show_scroll_bar
+    })
+  },
+  mounted() {
+    window.addEventListener(
+      "scroll",
+      this.utils.throttle(this.moniting_scrollbar, 90)
+    );
   }
 };
 </script>
 <style scoped>
-.header {
-  height: 160px;
-  border-bottom-right-radius: 40px;
-  border-bottom-left-radius: 40px;
-  background: url(../../assets/xiao.jpg) center;
-}
-/* .head_div {
+.head_div {
   width: 100%;
   height: 69px;
   position: fixed;
@@ -65,5 +77,5 @@ export default {
 }
 .scroll_bar_transition-leave-to {
   opacity: 0;
-} */
+}
 </style>
